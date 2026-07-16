@@ -56,20 +56,18 @@ def blog_detail(request, slug):
 
 @token_required
 def blog_add(request):
+    authors = Blog.objects.values_list(
+        'author',
+        flat=True
+    ).distinct()
 
     if request.method == 'POST':
-
-        form = BlogForm(
-            request.POST,
-            request.FILES
-        )
+        form = BlogForm(request.POST, request.FILES)
 
         if form.is_valid():
-
             blog = form.save(commit=False)
 
             base_slug = slugify(blog.title)
-
             slug = base_slug
             counter = 1
 
@@ -80,23 +78,19 @@ def blog_add(request):
             blog.slug = slug
             blog.save()
 
-            messages.success(
-                request,
-                "Blog added successfully!"
-            )
-
+            messages.success(request, "Blog added successfully!")
             return redirect('home')
 
     else:
         form = BlogForm()
-
 
     return render(
         request,
         'blog/blog_form.html',
         {
             'form': form,
-            'page_title': 'Add Blog Post'
+            'page_title': 'Add Blog Post',
+            'authors': authors,   # ADD THIS
         }
     )
 
