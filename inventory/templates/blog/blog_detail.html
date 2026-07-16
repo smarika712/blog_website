@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ blog.title }} - MyBlog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <a href="{% url 'home' %}" class="btn btn-link ps-0 mb-2"><i class="bi bi-arrow-left"></i> Back to all posts</a>
+
+        {% if blog.image %}
+            <img src="{{ blog.image.url }}" class="img-fluid rounded shadow-sm mb-4 blog-detail-img w-100" alt="{{ blog.title }}">
+        {% endif %}
+
+        <h1 class="fw-bold mb-2">{{ blog.title }}</h1>
+        <p class="text-muted mb-4">
+            <i class="bi bi-person"></i> {{ blog.author }}
+            &middot; <i class="bi bi-calendar3"></i> Published {{ blog.created_date|date:"F d, Y" }}
+            {% if blog.updated_date|date:"F d, Y" != blog.created_date|date:"F d, Y" %}
+                &middot; <span class="fst-italic">Updated {{ blog.updated_date|date:"F d, Y" }}</span>
+            {% endif %}
+        </p>
+
+        <div class="blog-content mb-4">
+            {{ blog.content|linebreaks }}
+        </div>
+
+        <div class="d-flex gap-2 border-top pt-3">
+            <a href="{% url 'blog_edit' blog.slug %}" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> Edit
+            </a>
+            <a href="{% url 'blog_delete' blog.slug %}" class="btn btn-danger">
+                <i class="bi bi-trash"></i> Delete
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

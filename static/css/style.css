@@ -1,0 +1,177 @@
+/* ---------- General ---------- */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* ---------- Navbar ---------- */
+.site-navbar {
+    background: linear-gradient(90deg, #1a1a2e, #16213e);
+}
+
+.site-navbar .nav-link {
+    font-weight: 500;
+}
+
+.site-navbar .nav-link:hover {
+    color: #4dabf7 !important;
+}
+
+/* ---------- Blog Cards ---------- */
+.blog-card {
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.blog-card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ---------- Blog Detail ---------- */
+.blog-detail-img {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.blog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background-color: #1a1a2e;
+    color: #d0d0d0;
+}
+
+/* ---------- Forms ---------- */
+textarea.form-control {
+    resize: vertical;
+}
+
+#drop-area {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#drop-area:hover {
+    background-color: #f8f9fa;
+}
+
+#drop-area.dragover {
+    background-color: #e9ecef;
+    border-color: #0d6efd !important;
+}
+
+/* ---------- Image Preview Card ---------- */
+.preview-card {
+    display: inline-block;
+    text-align: left;
+}
+
+.preview-thumb {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #f1f3f5;
+}
+
+.preview-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-thumb .remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background-color: #e03131;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.preview-thumb .remove-btn:hover {
+    background-color: #c92a2a;
+}
+
+.preview-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.preview-meta {
+    font-size: 0.8rem;
+}
+
+/* Authentication links */
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-links .nav-link {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Login button */
+.auth-links .login-btn {
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.auth-links .login-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* Register button */
+.auth-links .register-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.auth-links .register-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* Logout button */
+.auth-links .logout-btn {
+    color: #dc2626;
+    border-color: #dc2626;
+}
+
+.auth-links .logout-btn:hover {
+    background: #dc2626;
+    color: white;
+}

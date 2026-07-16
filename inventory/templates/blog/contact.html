@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Contact - MyBlog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Contact Us</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-send"></i> Send Message
+            </button>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=smarikathapa129@gmail.com" class="btn btn-outline-primary">
+                <i class="bi bi-envelope"></i> Send Email via Gmail
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}
